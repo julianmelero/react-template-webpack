@@ -32,15 +32,17 @@ module.exports = {
         ],
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.(css|scss)$/i,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
+          'style-loader',
           "css-loader",
-          "sass-loader",
+          "sass-loader",          
         ],
       },
+      {
+        type: "asset",
+        test: /\.(png|jpg|gif|svg)$/i,
+      }
     ],
   },
   plugins: [
